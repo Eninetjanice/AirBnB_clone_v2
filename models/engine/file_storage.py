@@ -60,9 +60,9 @@ class FileStorage:
         if (obj is None):
             pass
 
-        if (obj in FileStorage.__objects):  # Returns list of values in __obj
+        if (obj in FileStorage.__objects.values()):  # Returns vals list in obj
             key = obj.__class__.__name__ + "." + obj.id
-            del(__objects[key])
+            del(FileStorage.__objects[key])
 
     def close(self):
         """ Calls the reload method """
